@@ -1,8 +1,6 @@
 import React from "react";
 import axios from "axios";
 import EmployeeFocus from "../components/EmployeeFocus";
-import Favorites from "../components/Favorites";
-
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
@@ -10,12 +8,11 @@ class HomePage extends React.Component {
       searchValue: "",
       employees: [],
       favorites: [],
-      focusedEmployee: false
+      focusedEmployee: {}
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.setFocus = this.setFocus.bind(this);
   }
 
   componentDidMount() {
@@ -50,7 +47,6 @@ class HomePage extends React.Component {
 
   setFocus(employee) {
     this.setState({ focusedEmployee: employee });
-    this.setState({ searchValue: "" });
   }
 
   render() {
@@ -73,12 +69,7 @@ class HomePage extends React.Component {
               let name = employee.first_name + employee.last_name;
               if (name.includes(this.state.searchValue)) {
                 return (
-                  <li
-                    key={employee._id}
-                    onClick={() => {
-                      this.setFocus(employee);
-                    }}
-                  >
+                  <li>
                     {employee.first_name} {employee.last_name}
                   </li>
                 );
@@ -90,8 +81,6 @@ class HomePage extends React.Component {
         {this.state.focusedEmployee && (
           <EmployeeFocus employee={this.state.focusedEmployee} />
         )}
-
-        <Favorites />
       </div>
     );
   }
