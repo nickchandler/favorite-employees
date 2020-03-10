@@ -55,19 +55,9 @@ class HomePage extends React.Component {
   }
 
   addFavorite(employee) {
-    let newFavorites = this.state.favorites.slice(0);
+    let newFavorites = this.state.favorites.slice();
     newFavorites.push(employee);
     this.setState({ favorites: newFavorites });
-  }
-
-  removeFavorite(id) {
-    let newFavorites = this.state.favorites.filter(employee => {
-      return employee._id !== id;
-    });
-
-    this.setState({ favorites: newFavorites });
-
-    // axios.put('http://localhost:8080) to remove from favorites db
   }
 
   render() {

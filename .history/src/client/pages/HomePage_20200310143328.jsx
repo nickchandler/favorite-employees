@@ -15,7 +15,6 @@ class HomePage extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.addFavorite = this.addFavorite.bind(this);
     this.setFocus = this.setFocus.bind(this);
   }
 
@@ -55,19 +54,7 @@ class HomePage extends React.Component {
   }
 
   addFavorite(employee) {
-    let newFavorites = this.state.favorites.slice(0);
-    newFavorites.push(employee);
-    this.setState({ favorites: newFavorites });
-  }
-
-  removeFavorite(id) {
-    let newFavorites = this.state.favorites.filter(employee => {
-      return employee._id !== id;
-    });
-
-    this.setState({ favorites: newFavorites });
-
-    // axios.put('http://localhost:8080) to remove from favorites db
+    this.setState({ favorites: this.state.favorites.push(employee) });
   }
 
   render() {
@@ -107,7 +94,7 @@ class HomePage extends React.Component {
         {this.state.focusedEmployee && (
           <EmployeeFocus
             employee={this.state.focusedEmployee}
-            addFavorite={this.addFavorite}
+            onClick={this.addFavorite}
           />
         )}
 

@@ -8,9 +8,15 @@ const EmployeeFocus = function(props) {
       </h2>
 
       <ul>
-        <li>Email: {props.employee.email}</li>
-        <li>Age: {props.employee.age}</li>
-        <li>Salary: {props.employee.salary}</li>
+        <li>
+          <p>Email:</p> {props.employee.email}
+        </li>
+        <li>
+          <p>Age: </p> {props.employee.age}
+        </li>
+        <li>
+          <p>Salary:</p> {props.employee.salary}
+        </li>
       </ul>
 
       <button

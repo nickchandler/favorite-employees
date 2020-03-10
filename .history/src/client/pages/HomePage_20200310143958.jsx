@@ -60,16 +60,6 @@ class HomePage extends React.Component {
     this.setState({ favorites: newFavorites });
   }
 
-  removeFavorite(id) {
-    let newFavorites = this.state.favorites.filter(employee => {
-      return employee._id !== id;
-    });
-
-    this.setState({ favorites: newFavorites });
-
-    // axios.put('http://localhost:8080) to remove from favorites db
-  }
-
   render() {
     return (
       <div>

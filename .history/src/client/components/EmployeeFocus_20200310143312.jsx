@@ -13,13 +13,7 @@ const EmployeeFocus = function(props) {
         <li>Salary: {props.employee.salary}</li>
       </ul>
 
-      <button
-        onClick={() => {
-          props.addFavorite(props.employee);
-        }}
-      >
-        Add to Favorites
-      </button>
+      <button onClick={props.addFavorite}>Add to Favorites</button>
     </div>
   );
 };
