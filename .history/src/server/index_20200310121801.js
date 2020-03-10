@@ -14,6 +14,6 @@ app.get("/users", (req, res) => {
   db.fetchAllEmployees(req, res);
 });
 
-app.get("/users/user", (req, res) => {
+app.get("./users/:userid", (req, res) => {
   db.fetchEmployee(req, res);
 });

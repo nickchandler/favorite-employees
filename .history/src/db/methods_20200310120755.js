@@ -26,21 +26,14 @@ const insertMany = function(array) {
   Employee.insertMany(array);
 };
 
-const deleteDocument = function(req, res) {
-  Employee.findByIdAndRemove(req.params.id);
+const deleteDocument = function(id) {
+  Employee.findByIdAndRemove(id);
 };
 
-const fetchAllEmployees = async function(req, res) {
-  let employees = await Employee.find({});
+const fetchAllUsers = function(req, res) {
+  let employees = Employee.find({});
   res.send(employees);
-};
-
-const fetchEmployee = async function(req, res) {
-  let employee = await Employee.find({ _id: req.body.id });
-  res.send(employee);
 };
 
 exports.insertMany = insertMany;
 exports.deleteDocument = deleteDocument;
-exports.fetchAllEmployees = fetchAllEmployees;
-exports.fetchEmployee = fetchEmployee;

@@ -8,12 +8,12 @@ app.listen(PORT, () => {
   console.log(`application server is now up and running at port ${PORT}!`);
 });
 
-app.use(bodyParser.json());
+app.use(bodyParser());
 
 app.get("/users", (req, res) => {
-  db.fetchAllEmployees(req, res);
+  db.fetchAllUsers(req, res);
 });
 
-app.get("/users/user", (req, res) => {
+app.get("./users/:userid", (req, res) => {
   db.fetchEmployee(req, res);
 });

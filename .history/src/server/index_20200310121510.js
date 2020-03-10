@@ -11,9 +11,9 @@ app.listen(PORT, () => {
 app.use(bodyParser.json());
 
 app.get("/users", (req, res) => {
-  db.fetchAllEmployees(req, res);
+  db.fetchAllUsers(req, res);
 });
 
-app.get("/users/user", (req, res) => {
+app.get("./users/:userid", (req, res) => {
   db.fetchEmployee(req, res);
 });

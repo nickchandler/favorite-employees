@@ -36,7 +36,7 @@ const fetchAllEmployees = async function(req, res) {
 };
 
 const fetchEmployee = async function(req, res) {
-  let employee = await Employee.find({ _id: req.body.id });
+  let employee = await Employee.find({ _id: req.params.userid });
   res.send(employee);
 };
 

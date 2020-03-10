@@ -27,7 +27,7 @@ const insertMany = function(array) {
 };
 
 const deleteDocument = function(req, res) {
-  Employee.findByIdAndRemove(req.params.id);
+  Employee.findByIdAndRemove(id);
 };
 
 const fetchAllEmployees = async function(req, res) {
@@ -36,7 +36,7 @@ const fetchAllEmployees = async function(req, res) {
 };
 
 const fetchEmployee = async function(req, res) {
-  let employee = await Employee.find({ _id: req.body.id });
+  let employee = await Employee.find({ id: req.body.id });
   res.send(employee);
 };
 
