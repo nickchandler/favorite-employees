@@ -7,8 +7,11 @@ class EmployeePage extends React.Component {
   }
 
   render() {
-    return <h1>EmployeePage</h1>;
+    return (
+      <h1>EmployeePage</h1>;
+    )
   }
 }
+
 
 export default EmployeePage;

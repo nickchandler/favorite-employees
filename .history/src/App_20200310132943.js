@@ -4,7 +4,7 @@ import MainRouter from "./client/components/Router";
 import "./App.css";
 
 function App() {
-  return <MainRouter />;
+  return <Router />;
 }
 
 export default App;

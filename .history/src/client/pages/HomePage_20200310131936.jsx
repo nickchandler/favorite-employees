@@ -1,14 +1,18 @@
 import React from "react";
 
-class EmployeePage extends React.Component {
+
+class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
   render() {
-    return <h1>EmployeePage</h1>;
+    return (
+      <h1>HomePage</h1>;
+    )
   }
 }
 
-export default EmployeePage;
+
+export default HomePage;

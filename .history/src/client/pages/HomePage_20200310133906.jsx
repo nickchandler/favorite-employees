@@ -13,27 +13,7 @@ class HomePage extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount() {
-    axios
-      .get("http://localhost:8080/employees")
-      .then(employees => {
-        this.setState({ employees: employees.data });
-      })
-      .catch(err => {
-        console.log(err, "there was an error fetching employees");
-      });
-
-    axios
-      .get("http://localhost:8080/favorites")
-      .then(favorites => {
-        this.setState({ favorites: favorites.data });
-      })
-      .catch(err => {
-        console.log(err, "there was an error fetching favorite employees");
-      });
-
-    //need to implement favorites
-  }
+  componentDidMount() {}
 
   handleSubmit(event) {
     event.preventDefault();
@@ -48,7 +28,7 @@ class HomePage extends React.Component {
       <div>
         <h1>Favorite Employees</h1>
 
-        <form onSubmit={this.handleSubmit}>
+        <form handleSubmit={this.handleSubmit}>
           <input
             type="text"
             value={this.state.searchValue}

@@ -33,7 +33,6 @@ const favoriteSchema = new mongoose.Schema({
 
 const Employee = mongoose.model("Employee", employeeSchema);
 const Favorite = mongoose.model("Favorite", favoriteSchema);
-
 const insertMany = function(array) {
   Employee.insertMany(array);
 };
@@ -53,12 +52,10 @@ const fetchEmployee = async function(req, res) {
 };
 
 const fetchFavorites = async function(req, res) {
-  let favorites = await Favorite.find({});
-  res.send(favorites);
-};
+  let favorites = await 
+}
 
 exports.insertMany = insertMany;
 exports.deleteDocument = deleteDocument;
 exports.fetchAllEmployees = fetchAllEmployees;
 exports.fetchEmployee = fetchEmployee;
-exports.fetchFavorites = fetchFavorites;

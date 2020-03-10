@@ -1,21 +1,19 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import EmployeePage from "../pages/EmployeePage";
 
-const MainRouter = function(props) {
+export default Router = function(props) {
   return (
     <Router>
       <Switch>
         <Route path="/employee/:employeeId">
-          <EmployeePage />
+          <HomePage />
         </Route>
         <Route path="/">
-          <HomePage />
+          <EmployeePage />
         </Route>
       </Switch>
     </Router>
   );
 };
-
-export default MainRouter;

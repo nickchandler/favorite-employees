@@ -61,4 +61,3 @@ exports.insertMany = insertMany;
 exports.deleteDocument = deleteDocument;
 exports.fetchAllEmployees = fetchAllEmployees;
 exports.fetchEmployee = fetchEmployee;
-exports.fetchFavorites = fetchFavorites;

@@ -24,7 +24,7 @@ class HomePage extends React.Component {
       });
 
     axios
-      .get("http://localhost:8080/favorites")
+      .get("http://locahost8080/favorites")
       .then(favorites => {
         this.setState({ favorites: favorites.data });
       })

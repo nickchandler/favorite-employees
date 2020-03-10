@@ -15,7 +15,7 @@ class HomePage extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:8080/employees")
+      .get("http://localhost:3000/employees")
       .then(employees => {
         this.setState({ employees: employees.data });
       })
@@ -24,7 +24,7 @@ class HomePage extends React.Component {
       });
 
     axios
-      .get("http://localhost:8080/favorites")
+      .get("http://localhost:3000/favorites")
       .then(favorites => {
         this.setState({ favorites: favorites.data });
       })

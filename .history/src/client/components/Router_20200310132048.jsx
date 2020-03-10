@@ -1,9 +1,9 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import EmployeePage from "../pages/EmployeePage";
 
-const MainRouter = function(props) {
+export default Router = function(props) {
   return (
     <Router>
       <Switch>
@@ -17,5 +17,3 @@ const MainRouter = function(props) {
     </Router>
   );
 };
-
-export default MainRouter;
