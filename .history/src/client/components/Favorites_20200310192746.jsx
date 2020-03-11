@@ -5,13 +5,7 @@ const Favorites = function(props) {
   return (
     <div className={styles.container}>
       {props.favorites.map(employee => {
-        return (
-          <EmployeeBox
-            employee={employee}
-            key={employee._id}
-            handleRemove={props.handleRemove}
-          />
-        );
+        return <EmployeeBox employee={employee} key={employee._id} />;
       })}
     </div>
   );

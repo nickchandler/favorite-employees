@@ -72,7 +72,7 @@ class HomePage extends React.Component {
       return employee._id !== _id;
     });
     axios
-      .put("http://localhost:8080/favorites/remove", { _id: _id })
+      .put("http://localhost/favorites/remove", { _id: _id })
       .then(res => {
         console.log(res.status);
       })

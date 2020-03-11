@@ -16,7 +16,6 @@ class HomePage extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.addFavorite = this.addFavorite.bind(this);
-    this.removeFavorite = this.removeFavorite.bind(this);
     this.setFocus = this.setFocus.bind(this);
   }
 
@@ -67,18 +66,11 @@ class HomePage extends React.Component {
     this.setState({ favorites: newFavorites });
   }
 
-  removeFavorite(_id) {
+  removeFavorite(id) {
     let newFavorites = this.state.favorites.filter(employee => {
-      return employee._id !== _id;
+      return employee._id !== id;
     });
-    axios
-      .put("http://localhost:8080/favorites/remove", { _id: _id })
-      .then(res => {
-        console.log(res.status);
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    axios.put();
     this.setState({ favorites: newFavorites });
 
     // axios.put('http://localhost:8080) to remove from favorites db

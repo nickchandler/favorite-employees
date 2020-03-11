@@ -67,9 +67,7 @@ const addFavorite = async function(req, res) {
   });
 };
 const removeFavorite = async function(req, res) {
-  await Favorite.remove({ _id: req.body._id }, err => {
-    if (err) res.send(err, "there was an error removing from the db");
-  });
+  await Favorite.remove({ _id: req.body.id });
   res.sendStatus(200);
 };
 

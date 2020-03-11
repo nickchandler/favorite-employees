@@ -60,16 +60,13 @@ const fetchFavorites = async function(req, res) {
 };
 
 const addFavorite = async function(req, res) {
-  console.log(req.body.data, "this is favorite to be added");
   await Favorite.create(req.body.data, err => {
     if (err) console.log(err);
     else res.sendStatus(200);
   });
 };
 const removeFavorite = async function(req, res) {
-  await Favorite.remove({ _id: req.body._id }, err => {
-    if (err) res.send(err, "there was an error removing from the db");
-  });
+  await Favorite.remove({ _id: req.body.id });
   res.sendStatus(200);
 };
 

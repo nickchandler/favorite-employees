@@ -7,7 +7,6 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
   res.header(
     "Access-Control-Allow-Headers",
-    "Access-Control-Allow-Methods",
     "Origin, X-Requested-With, Content-Type, Accept"
   );
   next();
@@ -29,10 +28,6 @@ app.get("/employees/employee", (req, res) => {
 
 app.get("/favorites", (req, res) => {
   db.fetchFavorites(req, res);
-});
-
-app.post("/favorites", (req, res) => {
-  db.addFavorite(req, res);
 });
 
 app.put("/favorites/remove", (req, res) => {

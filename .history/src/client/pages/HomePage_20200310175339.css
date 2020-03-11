@@ -1,0 +1,10 @@
+.container {
+  justify-content: center;
+}
+
+#favorites {
+  display: flexbox;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}

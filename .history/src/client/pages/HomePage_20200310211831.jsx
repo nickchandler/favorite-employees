@@ -67,12 +67,12 @@ class HomePage extends React.Component {
     this.setState({ favorites: newFavorites });
   }
 
-  removeFavorite(_id) {
+  removeFavorite(id) {
     let newFavorites = this.state.favorites.filter(employee => {
-      return employee._id !== _id;
+      return employee._id !== id;
     });
     axios
-      .put("http://localhost:8080/favorites/remove", { _id: _id })
+      .put("http://favorites/remove", { _id: _id })
       .then(res => {
         console.log(res.status);
       })

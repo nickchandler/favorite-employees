@@ -1,0 +1,5 @@
+.container {
+  display: flexbox;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

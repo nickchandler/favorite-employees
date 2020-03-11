@@ -16,7 +16,6 @@ class HomePage extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.addFavorite = this.addFavorite.bind(this);
-    this.removeFavorite = this.removeFavorite.bind(this);
     this.setFocus = this.setFocus.bind(this);
   }
 
@@ -58,27 +57,14 @@ class HomePage extends React.Component {
   addFavorite(employee) {
     let newFavorites = this.state.favorites.slice(0);
     newFavorites.push(employee);
-    axios
-      .post("http://localhost:8080/favorites", { data: employee })
-      .then(res => {
-        console.log(res.status);
-      })
-      .catch(err => console.log(err, "there was an error adding a favorite"));
     this.setState({ favorites: newFavorites });
   }
 
-  removeFavorite(_id) {
+  removeFavorite(id) {
     let newFavorites = this.state.favorites.filter(employee => {
-      return employee._id !== _id;
+      return employee._id !== id;
     });
-    axios
-      .put("http://localhost:8080/favorites/remove", { _id: _id })
-      .then(res => {
-        console.log(res.status);
-      })
-      .catch(err => {
-        console.log(err);
-      });
+
     this.setState({ favorites: newFavorites });
 
     // axios.put('http://localhost:8080) to remove from favorites db
@@ -125,11 +111,7 @@ class HomePage extends React.Component {
           />
         )}
 
-        <Favorites
-          id={styles.favorites}
-          handleRemove={this.removeFavorite}
-          favorites={this.state.favorites}
-        />
+        <Favorites id={styles.favorites} favorites={this.state.favorites} />
       </div>
     );
   }

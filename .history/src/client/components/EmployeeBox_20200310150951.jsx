@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./EmployeeBox.module.css";
+import styles from "./EmployeeBox.css";
 const EmployeeBox = function(props) {
   return (
     <span className={styles.container}>
@@ -9,14 +9,6 @@ const EmployeeBox = function(props) {
 
       <h5>Performance Score: {props.employee.performance_score}</h5>
       <h5>Motto: {props.employee.motto}</h5>
-
-      <button
-        onClick={() => {
-          props.handleRemove(props.employee._id);
-        }}
-      >
-        Remove
-      </button>
     </span>
   );
 };
