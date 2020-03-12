@@ -12,7 +12,7 @@ const EmployeeBox = function(props) {
 
       <button
         onClick={() => {
-          console.log(props.employee, "this is employee being removed");
+          console.log(propes.employee, "this is employee being removed");
           props.handleRemove(props.employee._id);
         }}
       >

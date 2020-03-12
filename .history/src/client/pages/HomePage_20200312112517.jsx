@@ -71,8 +71,9 @@ class HomePage extends React.Component {
     let newFavorites = this.state.favorites.filter(employee => {
       return employee._id !== _id;
     });
+    console.log(_id, "this is id passed to removeFavorite handler");
     axios
-      .delete("http://localhost:8080/favorites/remove", { data: { _id: _id } })
+      .delete("http://localhost:8080/favorites/remove", { _id: _id })
       .then(res => {
         console.log(res.status);
       })
